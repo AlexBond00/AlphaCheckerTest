@@ -1,0 +1,27 @@
+name: AlphaChecker workflow
+
+on:
+  push:
+    branches: [ "dev" ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, DEV]
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Docker up
+        env:
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DJANGO_PASSWORD: ${{ secrets.DJANGO_PASSWORD }}
+        run: |
+          docker compose down
+          docker rmi $(docker images -a -q -f dangling=true) || echo "There are no unused dangling images"
+          docker compose -f docker-compose-remote.yml up --build -d
