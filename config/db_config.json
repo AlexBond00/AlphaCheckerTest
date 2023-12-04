@@ -1,0 +1,51 @@
+{
+  "connections": {
+    "link_factory": {
+      "engine": "tortoise.backends.asyncpg",
+      "credentials": {
+        "host": "$HOST_LINK",
+        "port": "$PORT_LINK",
+        "user": "$APP_USER_LINK",
+        "password": "$PASSWORD_LINK",
+        "database": "$DB_NAME_LINK",
+        "schema": "link_factory"
+      }
+    },
+    "postback_factory": {
+      "engine": "tortoise.backends.asyncpg",
+      "credentials": {
+        "host": "$HOST_POSTBACK",
+        "port": "$PORT_POSTBACK",
+        "user": "$APP_USER_POSTBACK",
+        "password": "$PASSWORD_POSTBACK",
+        "database": "$DB_NAME_POSTBACK",
+        "schema": "postback_factory"
+      }
+    },
+    "inspector": {
+      "engine": "tortoise.backends.asyncpg",
+      "credentials": {
+        "host": "$HOST",
+        "port": "$PORT",
+        "user": "$APP_USER",
+        "password": "$PASSWORD",
+        "database": "$DB_NAME",
+        "schema": "inspector"
+      }
+    }
+  },
+  "apps": {
+    "link_factory": {
+      "models": ["models.link_models"],
+      "default_connection": "link_factory"
+    },
+    "postback_factory": {
+      "models": ["models.postback_models"],
+      "default_connection": "postback_factory"
+    },
+    "inspector": {
+      "models": ["models.inspector_models"],
+      "default_connection": "inspector"
+    }
+  }
+}
