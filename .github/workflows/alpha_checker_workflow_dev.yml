@@ -16,11 +16,23 @@ jobs:
         name: Docker up
         env:
           DB_NAME: ${{ secrets.DB_NAME }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_PORT: ${{ secrets.DB_PORT }}
+          APP_USER: ${{ secrets.DB_USER }}
+          PASSWORD: ${{ secrets.DB_PASSWORD }}
+          HOST: ${{ secrets.DB_HOST }}
+          PORT: ${{ secrets.DB_PORT }}
           DJANGO_PASSWORD: ${{ secrets.DJANGO_PASSWORD }}
+
+          HOST_LINK: ${{ secrets.HOST_LINK }}
+          PORT_LINK: ${{ secrets.PORT_LINK }}
+          DB_NAME_LINK: ${{ secrets.DB_NAME_LINK }}
+          APP_USER_LINK: ${{ secrets.APP_USER_LINK }}
+          PASSWORD_LINK: ${{ secrets.PASSWORD_LINK }}
+
+          HOST_POSTBACK: ${{ secrets.HOST_POSTBACK }}
+          PORT_POSTBACK: ${{ secrets.PORT_POSTBACK }}
+          DB_NAME_POSTBACK: ${{ secrets.DB_NAME_POSTBACK }}
+          APP_USER_POSTBACK: ${{ secrets.APP_USER_POSTBACK }}
+          PASSWORD_POSTBACK: ${{ secrets.PASSWORD_POSTBACK }}
         run: |
           docker compose down
           docker rmi $(docker images -a -q -f dangling=true) || echo "There are no unused dangling images"
