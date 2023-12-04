@@ -16,10 +16,10 @@ jobs:
         name: Docker up
         env:
           DB_NAME: ${{ secrets.DB_NAME }}
-          APP_USER: ${{ secrets.DB_USER }}
-          PASSWORD: ${{ secrets.DB_PASSWORD }}
-          HOST: ${{ secrets.DB_HOST }}
-          PORT: ${{ secrets.DB_PORT }}
+          APP_USER: ${{ secrets.APP_USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          HOST: ${{ secrets.HOST }}
+          PORT: ${{ secrets.PORT }}
           DJANGO_PASSWORD: ${{ secrets.DJANGO_PASSWORD }}
 
           HOST_LINK: ${{ secrets.HOST_LINK }}
