@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8df3c9-e052-490a-aa01-60b9947c2577" name="Changes" comment="test deploy">
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-    </list>
+    <list default="true" id="7f8df3c9-e052-490a-aa01-60b9947c2577" name="Changes" comment="update .yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701681774879</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update .yml">
+      <created>1701682284724</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701682284724</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +112,7 @@
     <MESSAGE value="transfer AlphaChecker fpr testing ci/cd" />
     <MESSAGE value="update alpha_checker_workflow_dev.yml and docker-compose.yml" />
     <MESSAGE value="test deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="test deploy" />
+    <MESSAGE value="update .yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="update .yml" />
   </component>
 </project>

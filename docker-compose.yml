@@ -2,9 +2,9 @@ version: "2"
 
 services:
   bot_alpha_checker:
-    image: ferdinandthe2/bot_alpha_checker:latest
-#    build:
-#      dockerfile: Dockerfile
+#    image: ferdinandthe2/bot_alpha_checker:latest
+    build:
+      dockerfile: Dockerfile
       # Launch container only after 'postgres_alpha_checker'
       # returns positive healthcheck result
     depends_on:
@@ -34,7 +34,8 @@ services:
 
   postgres_alpha_checker:
     # Check if db ready to connection
-    image: ferdinandthe2/postgres_alpha_checker:latest
+#    image: ferdinandthe2/postgres_alpha_checker:latest
+    build: ./config
     healthcheck:
       test: ["CMD", "pg_isready", "--username=postgres"]
       interval: 5s
@@ -53,7 +54,8 @@ services:
       - checker_db:/var/lib/postgresql/data
 
   django_alpha_checker:
-    image: ferdinandthe2/django_alpha_checker:latest
+#    image: ferdinandthe2/django_alpha_checker:latest
+    build: ./django_alpha_checker
     # Launch container only after 'postgres_alpha_checker'
     # returns positive healthcheck result
     depends_on:

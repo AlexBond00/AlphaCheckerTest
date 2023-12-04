@@ -36,4 +36,4 @@ jobs:
         run: |
           docker compose down
           docker rmi $(docker images -a -q -f dangling=true) || echo "There are no unused dangling images"
-          docker compose -f docker-compose-remote.yml up --build -d
+          docker compose -f docker-compose.yml up --build -d
