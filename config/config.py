@@ -3,7 +3,7 @@ from typing import Final
 
 import pytz
 
-BOT_TOKEN: Final[str] = "6489796599:AAGyUnbepH9PN_aE7VYcutmxtCw7Wwmhoek"
+BOT_TOKEN: Final[str] = "6644748119:AAEgxgWHQjRSM8Bm513KLvwTJZ2XhPCI-7s"
 
 DEFAULT_TIMEZONE: Final = pytz.timezone("Europe/Moscow")
 
