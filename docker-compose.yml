@@ -11,23 +11,23 @@ services:
       postgres_alpha_checker:
         condition: service_healthy
     environment:
-      HOST: ${{ secrets.HOST }}
-      PORT: ${{ secrets.PORT }}
-      DB_NAME: ${{ secrets.DB_NAME }}
-      APP_USER: ${{ secrets.APP_USER }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      HOST: ${HOST}
+      PORT: ${PORT}
+      DB_NAME: ${DB_NAME}
+      APP_USER: ${APP_USER}
+      PASSWORD: ${PASSWORD}
 
-      HOST_LINK: ${{ secrets.HOST_LINK }}
-      PORT_LINK: ${{ secrets.PORT_LINK }}
-      DB_NAME_LINK: ${{ secrets.DB_NAME_LINK }}
-      APP_USER_LINK: ${{ secrets.APP_USER_LINK }}
-      PASSWORD_LINK: ${{ secrets.PASSWORD_LINK }}
+      HOST_LINK: ${HOST_LINK}
+      PORT_LINK: ${PORT_LINK}
+      DB_NAME_LINK: ${DB_NAME_LINK}
+      APP_USER_LINK: ${APP_USER_LINK}
+      PASSWORD_LINK: ${PASSWORD_LINK}
 
-      HOST_POSTBACK: ${{ secrets.HOST_POSTBACK }}
-      PORT_POSTBACK: ${{ secrets.PORT_POSTBACK }}
-      DB_NAME_POSTBACK: ${{ secrets.DB_NAME_POSTBACK }}
-      APP_USER_POSTBACK: ${{ secrets.APP_USER_POSTBACK }}
-      PASSWORD_POSTBACK: ${{ secrets.PASSWORD_POSTBACK }}
+      HOST_POSTBACK: ${HOST_POSTBACK}
+      PORT_POSTBACK: ${PORT_POSTBACK}
+      DB_NAME_POSTBACK: ${DB_NAME_POSTBACK}
+      APP_USER_POSTBACK: ${APP_USER_POSTBACK}
+      PASSWORD_POSTBACK: ${PASSWORD_POSTBACK}
 
     volumes:
       - checker_logs:/alpha_checker/logs
@@ -43,9 +43,9 @@ services:
       start_period: 5s
     command: [ "postgres", "-c", "log_statement=all" ]
     environment:
-      POSTGRES_USER: ${{ secrets.APP_USER }}
-      POSTGRES_PASSWORD: ${{ secrets.PASSWORD }}
-      POSTGRES_DB: ${{ secrets.DB_NAME }}
+      POSTGRES_USER: ${APP_USER}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     restart: on-failure
     ports:
       - "5432:5432"
@@ -61,12 +61,12 @@ services:
         condition: service_healthy
     entrypoint: /django_alpha_checker/entrypoint.sh
     environment:
-      HOST: ${{ secrets.HOST }}
-      PORT: ${{ secrets.PORT }}
-      DB_NAME: ${{ secrets.DB_NAME }}
-      APP_USER: ${{ secrets.APP_USER }}
-      PASSWORD: ${{ secrets.PASSWORD }}
-      DJANGO_SUPERUSER_PASSWORD: ${{ secrets.DJANGO_PASSWORD }}
+      HOST: ${HOST}
+      PORT: ${PORT}
+      DB_NAME: ${DB_NAME}
+      APP_USER: ${APP_USER}
+      PASSWORD: ${PASSWORD}
+      DJANGO_SUPERUSER_PASSWORD: ${DJANGO_PASSWORD}
     ports:
       - "8080:8000"
 
