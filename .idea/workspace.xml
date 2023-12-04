@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8df3c9-e052-490a-aa01-60b9947c2577" name="Changes" comment="update .yml">
-      <change afterPath="$PROJECT_DIR$/middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7f8df3c9-e052-490a-aa01-60b9947c2577" name="Changes" comment="add middleware for verify users" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701686444344</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add middleware for verify users">
+      <created>1701694499351</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701694499351</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +148,7 @@
     <MESSAGE value="update alpha_checker_workflow_dev.yml and docker-compose.yml" />
     <MESSAGE value="test deploy" />
     <MESSAGE value="update .yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update .yml" />
+    <MESSAGE value="add middleware for verify users" />
+    <option name="LAST_COMMIT_MESSAGE" value="add middleware for verify users" />
   </component>
 </project>

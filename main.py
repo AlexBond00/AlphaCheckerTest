@@ -12,6 +12,8 @@ from handlers import forwarding_message
 from handlers.commands import start_command, get_info_command, update_command, \
     help_command
 
+from middleware import AuthenticationMiddleware
+
 #  logger conf
 path_file = os.path.dirname(os.path.abspath(__file__))
 name_log: str = "/".join(
@@ -47,6 +49,7 @@ async def main():
     router.include_router(forwarding_message.router)
 
     dp.include_router(router)
+    dp.message.middleware(AuthenticationMiddleware())
 
     await dp.start_polling(
         *bots, allowed_updates=[

@@ -6,7 +6,7 @@ from aiogram.types import Message
 from models.inspector_models import User
 
 
-class ExceptionsMiddleware(BaseMiddleware):
+class AuthenticationMiddleware(BaseMiddleware):
     """Custom middleware to save messages in db."""
     async def __call__(
             self,
