@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f8df3c9-e052-490a-aa01-60b9947c2577" name="Changes" comment="add middleware for verify users">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_alpha_checker/alpha_checker/alpha_checker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_alpha_checker/alpha_checker/alpha_checker/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701782387006</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add middleware for verify users">
+      <created>1701783209556</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701783209556</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
