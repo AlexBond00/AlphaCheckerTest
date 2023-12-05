@@ -7,9 +7,6 @@ services:
       dockerfile: Dockerfile
       # Launch container only after 'postgres_alpha_checker'
       # returns positive healthcheck result
-    depends_on:
-      postgres_alpha_checker:
-        condition: service_healthy
     environment:
       HOST: ${HOST}
       PORT: ${PORT}
@@ -32,35 +29,11 @@ services:
     volumes:
       - checker_logs:/alpha_checker/logs
 
-  postgres_alpha_checker:
-    # Check if db ready to connection
-#    image: ferdinandthe2/postgres_alpha_checker:latest
-    build: ./config
-    healthcheck:
-      test: ["CMD", "pg_isready", "--username=postgres"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    command: [ "postgres", "-c", "log_statement=all" ]
-    environment:
-      POSTGRES_USER: ${APP_USER}
-      POSTGRES_PASSWORD: ${PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-    restart: on-failure
-    ports:
-      - "5432:5432"
-    volumes:
-      - checker_db:/var/lib/postgresql/data
-
   django_alpha_checker:
 #    image: ferdinandthe2/django_alpha_checker:latest
     build: ./django_alpha_checker
     # Launch container only after 'postgres_alpha_checker'
     # returns positive healthcheck result
-    depends_on:
-      postgres_alpha_checker:
-        condition: service_healthy
     entrypoint: /django_alpha_checker/entrypoint.sh
     environment:
       HOST: ${HOST}
@@ -73,6 +46,4 @@ services:
       - "8080:8000"
 
 volumes:
-  checker_db:
-    driver: local
   checker_logs:
